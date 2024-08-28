@@ -1,0 +1,10 @@
+.containerFull{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.menuLateral{
+    width: 18%;
+    background-color: rgb(30, 30, 255);
+}
