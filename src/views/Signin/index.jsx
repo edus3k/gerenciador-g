@@ -1,22 +1,23 @@
 import React from "react";
 import './style.css'
 
+import Back from '../../assets/Business.jpg'
 import Logo from '../../assets/SCJ.png';
 
 export default function Signin(){
     return(
-        <div className="container">
-            <div></div>
-            <div className="containerFull">
+        <div className="containerFull">
+            <div className="containerBack"><img className="back" src={Back}/></div>
+            <div className="container">
                 <div className="containerLogo"><img className="logo" src={Logo}/></div>
                 <from className="containerFrom">
                     <div className="containerLabel">
                         <label className="label"> Usuario:</label>
-                        <input/>
+                        <input className="in"/>
                     </div>
                     <div className="containerLabel">
-                        <label className="label"> Usuario:</label>
-                        <input/>
+                        <label className="label"> Password:</label>
+                        <input className="in"/>
                     </div>
                     <button>Login</button>
                 </from>
