@@ -1,26 +1,44 @@
-import React from "react";
-import './style.css'
+import React, { useState,useEffect } from "react";
+import { Form, useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
-import Back from '../../assets/Business.jpg'
-import Logo from '../../assets/SCJ.png';
+import './styler.css'
+import Scj from '../../assets/SCJ.png'
 
 export default function Recover(){
+    
+    const navigate = useNavigate();
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const emailRef = useRef()
+    const codRef = useRef()
+
+    useEffect(() => {
+        if (isSubmitted) {
+          navigate("/recover.code-password");
+        }
+    }, [isSubmitted, navigate]);
+
+    function handleSubmit(){
+        console.log(emailRef);
+        setIsSubmitted(true);
+    } 
+    
     return(
-        <div className="containerFull">
-            <div className="containerBack"><img className="back" src={Back}/></div>
-            <div className="container">
-                <div className="containerLogo"><img className="logo" src={Logo}/></div>
-                <h2>
-                    Informe seu email para refazer sua senha!
-                </h2>
-                <from className="containerFrom">
-                    <div className="containerLabel">
-                        <label className="label"> Email:</label>
-                        <input/>
-                    </div>
-                    <button>Enviar</button>
-                </from>
+        <div className="containerRecover">
+            <div className="containerRecoverElemets">
+                <img className="scj" src={Scj}/>
+                <div className="containerFromLink">
+                    <Form className="conatinerFromRecover" onSubmit={handleSubmit} >
+                        <label className="labelInforRecover">
+                            Informe seu email para enviarmos um codigo para fazer a recuperação de senha!
+                        </label>
+                        <label className="labelEmail">Email:</label>
+                        <input  ref={emailRef} className="inEmail" type="email" placeholder="Email"/>
+                        <button type="submit" className="btnEmailCod">Enviar Codigo</button>
+                    </Form>
+                </div>
             </div>
+            
         </div>
     )
 }

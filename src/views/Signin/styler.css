@@ -1,0 +1,186 @@
+.containerSignin{
+    width: 100%;
+    min-height: 100vh;
+    flex: 1;
+    background-image: url("../../assets/Business.jpg");
+    background-position: center;
+}
+
+.containerSigninElemets{
+    width: 32%;
+    height: 100vh;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.scj{
+    width: 100%;
+}
+
+.containerFromLink{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-color: #000;
+    border-width: 1;
+    border-radius: 8px;
+    align-items: center;
+}
+.conatinerFromLogin{
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.labelLogin{
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.inEmail{
+    height: 28px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 12px;
+}
+.labelEmail{
+    font-size: 12px;
+}
+.inPassword{
+    margin-top: 8px;
+    margin-bottom: 12px;
+    height: 28px;
+    border: none;
+    border-radius: 12px;
+}
+.labelPassword{
+    font-size: 12px;
+}
+.btnLogin{
+    margin-top: 12px;
+    height: 30px;
+    background-color: #000;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+.btnLogin:hover{
+    height: 32px;
+    background-color: #FFF;
+    color: #000;
+    font-size: 16px;
+}
+.linkRecoverPassword{
+    text-decoration: none;
+    margin: 10px;
+    font-size: 16px;
+}
+.linkRecoverPassword:hover{
+    color: #000;
+}
+.linkCreat{
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 16px;
+}
+.linkCreat:hover{
+    color: #000;
+}
+
+
+@media (max-width: 768px){
+    .containerSignin{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(2, 2, 182);
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .scj{
+        width: 20rem;
+    }
+
+    .containerFromLink{
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .btnLogin{
+        color: #FFF;
+        background-color: #000000;
+    }
+      
+}
+
+@media (max-width: 425px){
+    .containerSignin{
+        width: 90%;
+        height: 100vh;
+        background-color: rgb(214, 214, 214);
+    }
+
+    .containerSigninElemets{
+        background-color:  rgb(214, 214, 214);
+        justify-content: left;
+        align-content: flex-start;
+    }
+
+    .scj{
+        width: 16rem;
+        margin-left: 12%;
+    }
+
+    .containerFromLink{
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+    }
+
+    .conatinerFromLogin{
+        width: 80%;
+        align-content: center;
+        justify-content: center;
+        margin-top: 12px;
+        margin-left: 4%;
+        margin-bottom: 12px;
+        color: #FFF;
+    }
+
+    .btnLogin{
+        margin-top: 12px;
+        height: 30px;
+        color: #FFF;
+        background-color: rgb(53, 53, 53);
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        border-radius: 12px;
+    }
+
+    
+    .linkRecoverPassword{
+        color: #FFF;
+    }
+
+
+    .linkCreat{
+        margin-top: 22px;
+        color: #FFF;
+    }
+
+}

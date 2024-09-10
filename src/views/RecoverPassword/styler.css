@@ -1,0 +1,82 @@
+.containerRecover{
+    width: 100%;
+    min-height: 100vh;
+    flex: 1;
+    background-image: url("../../assets/Business.jpg");
+    background-position: center;
+}
+
+.containerRecoverElemets{
+    width: 32%;
+    height: 100vh;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.scj{
+    width: 100%;
+}
+
+.containerFromLink{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-color: #000;
+    border-width: 1;
+    border-radius: 8px;
+    align-items: center;
+}
+.conatinerFromRecover{
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+.labelInforRecover{
+    margin-bottom: 12px;
+}
+.inCod{
+    margin-top: 8px;
+    margin-bottom: 12px;
+    height: 28px;
+    border: none;
+    border-radius: 12px;
+}
+.labelcod{
+    font-size: 12px;
+}
+.inPassword{
+    margin-top: 8px;
+    margin-bottom: 12px;
+    height: 28px;
+    border: none;
+    border-radius: 12px;
+}
+.labelPassword{
+    font-size: 12px;
+}
+.btnRecover{
+    margin-top: 12px;
+    height: 30px;
+    background-color: #000;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+.btnRecover:hover{
+    height: 32px;
+    background-color: #FFF;
+    color: #000;
+    font-size: 16px;
+}
+
+
+
+

@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Signin from '../views/Signin';
 import Recover from '../views/Recover';
+import RecoverPassword from '../views/RecoverPassword';
 import Create from '../views/Create';
 import Home from '../views/Home';
 /*import Adms from '../views/Adms';
@@ -20,11 +21,15 @@ const routes = createBrowserRouter([
     element: <Signin/>
   },
   {
-    path: '/recover',
+    path: '/recover.code',
     element: <Recover/>
   },
   {
-    path: '/create',
+    path: '/recover.code-password',
+    element: <RecoverPassword/>
+  },
+  {
+    path: '/create.adm',
     element: <Create/>
   },
   {
