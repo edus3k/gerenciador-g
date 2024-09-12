@@ -1,40 +1,49 @@
-import React from "react";
-import './style.css'
+import React, { useState,useEffect } from "react";
+import { Form, useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
-import Logo from '../../assets/SCJ.png';
+import './styler.css'
+import Scj from '../../assets/SCJ.png'
 
 export default function Create(){
+    
+    const navigate = useNavigate();
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const nameRef = useRef()
+    const emailRef = useRef()
+    const passwordRef = useRef()
+
+    useEffect(() => {
+        if (isSubmitted) {
+          navigate("/");
+        }
+    }, [isSubmitted, navigate]);
+
+    function handleSubmit(){
+        console.log(emailRef);
+        setIsSubmitted(true);
+    } 
+    
     return(
-        <div className="container">
-            <div className="containerFull">
-                <div className="containerLogo"><img className="logo" src={Logo}/></div>
-                <h2>
-                    Vamos Criar sua Conta!
-                </h2>
-                <from className="containerFrom">
-                    <div className="containerLabel">
-                        <label className="label"> Nome:</label>
-                        <input/>
-                    </div>
-                    <div className="containerLabel">
-                        <label className="label"> CPF:</label>
-                        <input/>
-                    </div>
-                    <div className="containerLabel">
-                        <label className="label"> Email:</label>
-                        <input/>
-                    </div>
-                    <div className="containerLabel">
-                        <label className="label"> Password:</label>
-                        <input/>
-                    </div>
-                    <div className="containerLabel">
-                        <label className="label"> Cod-Acesso:</label>
-                        <input/>
-                    </div>
-                    <button>Enviar</button>
-                </from>
+        <div className="containerCreate">
+            <div className="containerCreateElemets">
+                <img className="scj" src={Scj}/>
+                <div className="containerFromLink">
+                    <Form className="conatinerFromCreate" onSubmit={handleSubmit} >
+                        <label className="labelInforCreate">
+                            Informe os dados abaixo para a criação de conta.
+                        </label>
+                        <label className="labelEmail">Name:</label>
+                        <input  ref={nameRef} className="inName" type="text" placeholder="Nome"/>
+                        <label className="labelEmail">Email:</label>
+                        <input  ref={emailRef} className="inEmail" type="email" placeholder="Email"/>
+                        <label className="labelEmail">Password:</label>
+                        <input  ref={passwordRef} className="inPassword" type="password" placeholder="Password"/>
+                        <button type="submit" className="btnEmailCod">Registra-se</button>
+                    </Form>
+                </div>
             </div>
+            
         </div>
     )
 }

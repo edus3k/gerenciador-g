@@ -1,17 +1,25 @@
-import React from "react";
-import { Form, Link } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 import './styler.css'
 import Scj from '../../assets/SCJ.png'
 
 export default function Signin(){
-    
+    const navigate = useNavigate();
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const emailRef = useRef()
     const passwordRed = useRef()
 
+    useEffect(() => {
+        if (isSubmitted) {
+          navigate("/home");
+        }
+    }, [isSubmitted, navigate]);
+
     function handleSubmit(){
         console.log(emailRef);
+        setIsSubmitted(true);
     } 
     
     return(

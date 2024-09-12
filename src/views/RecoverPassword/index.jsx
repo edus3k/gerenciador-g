@@ -1,19 +1,27 @@
-import React from "react";
-import { Form } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { Form, useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 import './styler.css'
 import Scj from '../../assets/SCJ.png'
 
 export default function RecoverPassword(){
-    
+    const navigate = useNavigate();
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const emailRef = useRef()
     const codRef = useRef()
     const passwordRed = useRef()
 
+    useEffect(() => {
+        if (isSubmitted) {
+          navigate("/");
+        }
+    }, [isSubmitted, navigate]);
+
     function handleSubmit(){
         console.log(emailRef);
-    } 
+        setIsSubmitted(true);
+    }  
     
     return(
         <div className="containerRecover">

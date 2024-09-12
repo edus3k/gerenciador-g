@@ -1,0 +1,122 @@
+.containerHome{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(205, 205, 205);
+    justify-content: space-between;
+}
+
+.header{
+    width: 100%;
+    height: 12vh;
+    background-color: rgb(232, 232, 232);
+    border-bottom-right-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.logoName{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+.icLogo{
+    width: 38%;
+}
+.containerUser{
+    width: auto;
+    height: 40px;
+    background-color: rgb(214, 214, 214);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding-inline: 12px;
+    border-top-left-radius: 12px;
+    margin-right: 32px;
+}
+.icUser{
+    width: 18px;
+    height: 18px;
+}
+.nameUser{
+    margin-inline: 8px;
+    font-size: 12px;
+}
+.btnExit{
+    background-color:  rgb(245, 245, 245);
+    padding-inline: 8px;
+    border-width: 2px;
+    border-radius: 6px;
+}
+.btnExit:hover{
+    background-color: rgb(151, 207, 255);
+    padding-inline: 8px;
+    border-width: 2px;
+    border-radius: 6px;
+}
+
+.containerCenter{
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.containerMenuLateral{
+    width: 14%;
+    height: 76vh;
+    background-color: rgb(33, 33, 181);
+    border-bottom-right-radius: 32px;
+}
+
+.containerCards{
+    width: 56%;
+    height: 76vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 2%;
+    box-sizing: border-box;
+}
+.cards{
+    background-color: rgb(255, 255, 255);
+    width: 12rem;
+    height: 12.2rem;
+    margin: 2rem 3rem 0rem 3rem;
+    border-top-left-radius: 26px;
+    border-bottom-right-radius: 36px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.cards:hover{
+    background-color: rgb(127, 147, 238);
+    width: 11rem;
+    height: 11.2rem;
+    transition: 388ms;
+}
+.cardImg{
+    width: 100%;
+    height: 50%;
+}
+.icCardImg{
+    width: 58%;
+}
+
+.containerLogs{
+    width: 30%;
+    height: 76vh;
+    background-color: rgb(71, 71, 71);
+}
+
+.footer{
+    width: 100%;
+    height: 12vh;
+    background-color: rgb(30, 30, 30);
+}
