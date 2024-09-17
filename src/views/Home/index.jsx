@@ -7,6 +7,8 @@ import icEmployee from '../../assets/employee.png'
 import icPeople from '../../assets/people.png'
 import icContract from '../../assets/contract.png'
 import icBuilding from '../../assets/building.png'
+import icMagnifier from '../../assets/magnifier.png'
+import { Link } from "react-router-dom";
 
 export default function Home(){
     return(
@@ -15,7 +17,17 @@ export default function Home(){
                 <div className="logoName">
                     <img className="icLogo" src={icLogo}/>
                 </div>
-                <div></div>
+                <div className="menu">
+                    <from className="fromMenu">
+                        <input className="inSearch" type="search"/>
+                        <button className="btnSearch">Pesquisar</button>
+                    </from>
+                    <div className="linkTopMenu">
+                        <Link className="inLinkTopMenu" to={"/home"}>Home</Link>
+                        <Link className="inLinkTopMenu" to={"/cadastro"}>Cadastro</Link>
+                        <Link className="inLinkTopMenu" to={"/arquivo"}>Arquivo</Link>
+                    </div>
+                </div>
                 <div className="containerUser">
                     <img className="icUser" src={icUser}/>
                     <h2 className="nameUser">Eduardo Santos</h2>
@@ -59,9 +71,14 @@ export default function Home(){
                             <h2>Imoveis</h2>
                         </div>
                     </div>
-                </div>
-                <div className="containerLogs">
-                        <h3>ok</h3>
+                    <div className="cards">
+                        <div className="cardImg">
+                            <img className="icCardImg" src={icBuilding}/>
+                        </div>
+                        <div>
+                            <h2>Arquivos</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="footer">
