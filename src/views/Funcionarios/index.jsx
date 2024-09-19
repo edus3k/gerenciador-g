@@ -10,7 +10,7 @@ import icBuilding from '../../assets/building.png'
 import icFolders from '../../assets/folders.png'
 import { Link } from "react-router-dom";
 
-export default function Home(){
+export default function Funcionarios(){
     return(
         <div className="containerHome">
             <div className="header">
@@ -47,7 +47,7 @@ export default function Home(){
                     <div className="menuLateral">
                         <Link className="linkMenuLateral">Home</Link>
                         <Link className="linkMenuLateral">Cadastro</Link>
-                        <Link to={"/funcionarios"} className="linkMenuLateral">Funcionarios</Link>
+                        <Link className="linkMenuLateral">Funcionarios</Link>
                         <Link className="linkMenuLateral">Estagiários</Link>
                         <Link className="linkMenuLateral">Imoveis</Link>
                         <Link className="linkMenuLateral">Contratos</Link>
@@ -55,47 +55,8 @@ export default function Home(){
                         <Link className="linkMenuLateral">Sair</Link>
                     </div>
                 </div>
-                <div className="containerCards">
-                    <div className="cards">
-                        <div className="cardImg">
-                            <img className="icCardImg" src={icEmployee}/>
-                        </div>
-                        <div>
-                            <h2>Funcionarios</h2>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="cardImg">
-                            <img className="icCardImg" src={icPeople}/>
-                        </div>
-                        <div>
-                            <h2>Estagiários</h2>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="cardImg">
-                            <img className="icCardImg" src={icContract}/>
-                        </div>
-                        <div>
-                            <h2>Contratos</h2>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="cardImg">
-                            <img className="icCardImg" src={icBuilding}/>
-                        </div>
-                        <div>
-                            <h2>Imoveis</h2>
-                        </div>
-                    </div>
-                    <div className="cards">
-                        <div className="cardImg">
-                            <img className="icCardImg" src={icFolders}/>
-                        </div>
-                        <div>
-                            <h2>Arquivos</h2>
-                        </div>
-                    </div>
+                <div className="containerInforFunc">
+                    
                 </div>
             </div>
             <div className="footer">

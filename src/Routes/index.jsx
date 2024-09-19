@@ -5,6 +5,7 @@ import Recover from '../views/Recover';
 import RecoverPassword from '../views/RecoverPassword';
 import Create from '../views/Create';
 import Home from '../views/Home';
+import Funcionarios from '../views/Funcionarios';
 /*import Adms from '../views/Adms';
 import Imoves from '../views/Imoves';
 import Func from '../views/Func';
@@ -35,6 +36,10 @@ const routes = createBrowserRouter([
   {
     path: '/home',
     element: <Home/>
+  },
+  {
+    path: '/funcionarios',
+    element: <Funcionarios/>
   },
 ])
 

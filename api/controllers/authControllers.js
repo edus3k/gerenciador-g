@@ -17,13 +17,24 @@ userRoute.post('/login', async(req, res)=>{
 });
 
 userRoute.post('/register', async(req, res)=>{
-    const {name, email, password, cod} = req.body
+    const { email } = req.body
+    
     try {
+
+        if(await userModel.findOne({ email })){
+            return res.status(400).send({msg: 'Email já registrado.'})
+        }
+
         const user = await userModel.create(req.body);
-        return res.status(200).send({user})
+        user.password = undefined
+        
+        return res.status(200).send({
+            msg: "Registrado com sucesso.",
+            user: user
+        })
     } catch (error) {
         return res.status(400).send({
-            msg: "Registation failed",    
+            msg: "Erro ao registar-se.",    
             error: error
         })
     }

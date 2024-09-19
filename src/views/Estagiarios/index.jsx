@@ -47,7 +47,7 @@ export default function Home(){
                     <div className="menuLateral">
                         <Link className="linkMenuLateral">Home</Link>
                         <Link className="linkMenuLateral">Cadastro</Link>
-                        <Link to={"/funcionarios"} className="linkMenuLateral">Funcionarios</Link>
+                        <Link className="linkMenuLateral">Funcionarios</Link>
                         <Link className="linkMenuLateral">Estagiários</Link>
                         <Link className="linkMenuLateral">Imoveis</Link>
                         <Link className="linkMenuLateral">Contratos</Link>
