@@ -1,5 +1,6 @@
 import express from 'express';
 import userModel from '../models/userSchema.js';
+import bcrypt from 'bcryptjs'
 
 const userRoute = express.Router();
 
@@ -13,6 +14,26 @@ userRoute.get('/user', async(req, res)=>{
 });
 
 userRoute.post('/login', async(req, res)=>{
+    const { email, password } = req.body;
+
+    try {
+
+        if(await userModel.findOne({ email })){
+            return res.status(400).send({msg: 'Usuário não encontrado.'})
+        }
+
+        const passwordValidate = await bcrypt.compare(password, userModel.password);
+        if (!passwordValidate) {
+            return res.status(401).json({ message: 'Senha incorreta' });
+        }
+
+        return res.status(200).json({
+            message: 'Login realizado com sucesso!',
+        });
+
+    } catch (erro) {
+      return res.status(500).json({ message: 'Erro no servidor', erro });
+    }
 
 });
 
@@ -58,7 +79,5 @@ userRoute.delete('/delete/:id', async(req, res)=>{
         res.status(500).json({ error: error.message });
     }
 })
-
-//module.exports =  app => app.user('/auth', userRoute);
 
 export default userRoute;

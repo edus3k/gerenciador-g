@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { Form, useNavigate } from "react-router-dom";
 import { useRef } from "react";
+import api from "../../services/api"
 
 import './styler.css'
 import Scj from '../../assets/SCJ.png'
@@ -9,9 +10,9 @@ export default function Create(){
     
     const navigate = useNavigate();
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const nameRef = useRef()
-    const emailRef = useRef()
-    const passwordRef = useRef()
+    const nameRef = useRef(null)
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
 
     useEffect(() => {
         if (isSubmitted) {
@@ -19,9 +20,44 @@ export default function Create(){
         }
     }, [isSubmitted, navigate]);
 
+    async function createUsers(inName, inEmail, inPassword){
+        try {
+
+            const user = {
+              name: inName,
+              email: inEmail,
+              password: inPassword
+            };
+            await api.post('/register', user);
+
+            console.log('Usuário criado com sucesso.');
+            alert("Usuário criado com sucesso!");
+            setIsSubmitted(true);
+
+        } catch (erro) {
+            console.error('Erro ao criar usuário:', erro);
+            alert("Erro ao criar usuário");
+        }
+    }
+
     function handleSubmit(){
-        console.log(emailRef);
-        setIsSubmitted(true);
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        
+        if(!name){
+            alert('Por favor, informe seu nome.');
+        }
+        else if (!email.includes('@')) {
+          alert('Por favor, insira um email válido.');
+        }
+        else if (password.length < 6) {
+          alert('A senha deve ter pelo menos 6 caracteres.');
+          return false;
+        }else{
+            createUsers(name, email, password);
+        }
+
     } 
     
     return(
